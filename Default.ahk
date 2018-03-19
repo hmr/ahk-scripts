@@ -3,32 +3,60 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; Alt+Win+C -> Calc
+; Win-N: Notepad++
+#n::
+	if WinExist("ahk_class Notepad++")
+		WinActivate
+	Else
+		Run, "C:\Program Files (x86)\Notepad++\notepad++.exe", "C:\Program Files (x86)\Notepad++"
+Return
+
+; Win-V: VSC(Insiders)
+#v::
+	if WinExist("ahk_exe Code - Insiders.exe")
+		WinActivate
+	Else
+		Run, "C:\Program Files\Microsoft VS Code Insiders\Code - Insiders.exe", "C:\Program Files\Microsoft VS Code Insiders"
+Return
+
+; Win-E: Q-Dir instead of Explorer
+#e::
+	if WinExist("ahk_class ATL:000000014015EFE0")
+		WinActivate
+	Else
+		Run, "C:\Program Files\Q-Dir\Q-Dir.exe"
+Return
+
+; Alt-Win-C: 電卓
 #!c::
+	if WinExist("電卓")
+		WinActivate
+	Else
         Run, calc.exe
 Return
 
-; Win+E -> Q-Dir instead of Explorer
-#e::
-    Run, "C:\Program Files\Q-Dir\Q-Dir.exe"
-Return
-
-; Ctl+Win+X -> Dos Prompt
+; Ctrl-Win-X: DOS Prompt
 ^#x::
-    Run, cmd.exe
+	if WinExist("ahk_exe cmd.exe")
+		WinActivate
+	Else
+		Run, cmd.exe
 Return
 
-; Ctl+Win+C -> Cygwin Mintty
+; Ctrl-Win-C: Cygwin Mintty
 ^#c::
-    Run, C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico -, C:\cygwin64\home\dg
+	if WinExist("dg@dg02")
+		WinActivate
+	Else
+		Run, C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico -, C:\cygwin64\home\dg
 Return
 
-; Ctrl-Win-R -> RTM
+; Ctrl-Win-R: RTM
 ^#r::
     Run C:\Users\dg\AppData\Local\rememberthemilk\Remember The Milk.exe, C:\Users\dg\AppData\Local\rememberthemilk\app-1.1.9
 Return
 
-; Ctrl-Win-S -> Slack
+; Ctrl+Win+S: Slack
 ^#s::
     if WinExist("Slack - ")
         WinActivate
@@ -36,7 +64,7 @@ Return
         Run C:\Apps\Slack.lnk
 Return
 
-; Ctrl-Win-W -> WhatsApp
+; Ctrl-Win-W: WhatsApp
 ^#w::
     if WinExist("WhatsApp")
         WinActivate
@@ -44,7 +72,7 @@ Return
         Run C:\Users\dg\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WhatsApp\WhatsApp.lnk
 Return
 
-; Win-Alt-S -> Spotify
+; Win-Alt-S: Spotify
 #!s::
     Run C:\Apps\Spotify.lnk
 Return
