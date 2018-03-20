@@ -102,6 +102,8 @@ Return
 #!PgDn::Volume_Mute
 
 ; Settings for IME
+;半角/全角 -> Esc
+sc029::Send {sc001}
 ;07B(無変換) -> 半角/全角
 sc07B::Send {sc029}
 ;079(変換) -> 半角/全角

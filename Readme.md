@@ -36,4 +36,7 @@ https://www.google.co.jp/search?q=autohotkey
 
 ### Other Settings
 
-* Disable language switching
+* Zenkaku/Hankaku -> Esc
+* Henkan/Muhenkan -> Zenkaku/Hankaku
+* Win-Spc(Language Switching) is disabled.
+
