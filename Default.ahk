@@ -27,8 +27,24 @@ Return
 		Run, "C:\Program Files\Q-Dir\Q-Dir.exe"
 Return
 
-; Alt-Win-C: 電卓
-#!c::
+; Win-C: Cygwin Mintty
+#c::
+	if WinExist("dg@dg02")
+		WinActivate
+	Else
+		Run, C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico -, C:\cygwin64\home\dg
+Return
+
+; Win+S: Slack
+#s::
+    if WinExist("Slack - ")
+        WinActivate
+    Else
+        Run C:\Apps\Slack.lnk
+Return
+
+; Ctl-Win-C: 電卓
+^#c::
 	if WinExist("電卓")
 		WinActivate
 	Else
@@ -43,25 +59,9 @@ Return
 		Run, cmd.exe
 Return
 
-; Ctrl-Win-C: Cygwin Mintty
-^#c::
-	if WinExist("dg@dg02")
-		WinActivate
-	Else
-		Run, C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico -, C:\cygwin64\home\dg
-Return
-
 ; Ctrl-Win-R: RTM
 ^#r::
     Run C:\Users\dg\AppData\Local\rememberthemilk\Remember The Milk.exe, C:\Users\dg\AppData\Local\rememberthemilk\app-1.1.9
-Return
-
-; Ctrl+Win+S: Slack
-^#s::
-    if WinExist("Slack - ")
-        WinActivate
-    Else
-        Run C:\Apps\Slack.lnk
 Return
 
 ; Ctrl-Win-W: WhatsApp
@@ -72,8 +72,8 @@ Return
         Run C:\Users\dg\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WhatsApp\WhatsApp.lnk
 Return
 
-; Win-Alt-S: Spotify
-#!s::
+; Ctrl-Win-S: Spotify
+^#s::
     Run C:\Apps\Spotify.lnk
 Return
 
