@@ -110,5 +110,8 @@ sc07B::Send {sc029}
 sc079::Send {sc029}
 ;029 -> かな
 
+;EXPERIMENTAL SETTINGS
+;Alt-Tab -> Win-Tab
+!Tab::Send, #{Tab}
 ; Settings for Gmail
 ; Add BCC

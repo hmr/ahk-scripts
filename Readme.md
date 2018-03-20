@@ -1,4 +1,4 @@
-# akh-scripts
+# ahk-scripts
 
 Small scripts for AutoHotKey.
 
@@ -39,4 +39,5 @@ https://www.google.co.jp/search?q=autohotkey
 * Zenkaku/Hankaku -> Esc
 * Henkan/Muhenkan -> Zenkaku/Hankaku
 * Win-Spc(Language Switching) is disabled.
+* Alt-Tab -> Win-Tab
 
