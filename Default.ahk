@@ -3,6 +3,15 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+; Win-A: A5M2
+#a::
+	if WinExist("ahk_exe A5M2.exe")
+		WinActivate
+	Else
+		Run, "C:\Program Files\a5m2\A5M2.exe", "C:\Program Files\a5m2"
+Return
+
+
 ; Win-N: Notepad++
 #n::
 	if WinExist("ahk_class Notepad++")
@@ -29,18 +38,26 @@ Return
 
 ; Win-C: Cygwin Mintty
 #c::
-	if WinExist("dg@dg02")
+	if WinExist("ahk_exe mintty.exe")
 		WinActivate
 	Else
 		Run, C:\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico -, C:\cygwin64\home\dg
 Return
 
-; Win+S: Slack
+; Win-S: Slack
 #s::
     if WinExist("Slack - ")
         WinActivate
     Else
         Run C:\Apps\Slack.lnk
+Return
+
+; Win-F: Firefox
+#f::
+	if WinExist("ahk_class MozillaWindowClass")
+		WinActivate
+	Else
+		Run, "C:\Program Files\Mozilla Firefox\firefox.exe", "C:\Program Files\Mozilla Firefox"
 Return
 
 ; Ctl-Win-C: 電卓
@@ -59,13 +76,13 @@ Return
 		Run, cmd.exe
 Return
 
-; Ctrl-Win-R: RTM
-^#r::
+; Win-R: RTM
+#r::
     Run C:\Users\dg\AppData\Local\rememberthemilk\Remember The Milk.exe, C:\Users\dg\AppData\Local\rememberthemilk\app-1.1.9
 Return
 
-; Ctrl-Win-W: WhatsApp
-^#w::
+; Win-W: WhatsApp
+#w::
     if WinExist("WhatsApp")
         WinActivate
     Else
@@ -102,16 +119,17 @@ Return
 #!PgDn::Volume_Mute
 
 ; Settings for IME
-;半角/全角 -> Esc
-sc029::Send {sc001}
+;半角/全角 -> Nothing
+sc029::
+return
 ;07B(無変換) -> 半角/全角
-sc07B::Send {sc029}
+;sc07B::Send {sc029}
 ;079(変換) -> 半角/全角
 sc079::Send {sc029}
 ;029 -> かな
 
 ;EXPERIMENTAL SETTINGS
 ;Alt-Tab -> Win-Tab
-!Tab::Send, #{Tab}
+;!Tab::Send, #{Tab}
 ; Settings for Gmail
 ; Add BCC

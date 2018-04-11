@@ -25,6 +25,7 @@ https://www.google.co.jp/search?q=autohotkey
 
 * Win-C: Mintty(Cygwin Terminal)
 * Win-E: Q-Dir instead of Explorer
+* Win-F: Firefox
 * Win-N: Notepad++
 * Win-S: Slack
 * Win-V: VSC(Insiders)
@@ -36,8 +37,9 @@ https://www.google.co.jp/search?q=autohotkey
 
 ### Other Settings
 
-* Zenkaku/Hankaku -> Esc
-* Henkan/Muhenkan -> Zenkaku/Hankaku
+* Zenkaku/Hankaku -> Nothing
+* Henkan/Muhenkan -> IME Off
+* Hiragana -> IME On
 * Win-Spc(Language Switching) is disabled.
 * Alt-Tab -> Win-Tab
 
