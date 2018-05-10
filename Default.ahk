@@ -30,7 +30,7 @@ Return
 
 ; Win-E: Q-Dir instead of Explorer
 #e::
-	if WinExist("ahk_class ATL:000000014015EFE0")
+	if WinExist("ahk_exe Q-Dir.exe")
 		WinActivate
 	Else
 		Run, "C:\Program Files\Q-Dir\Q-Dir.exe"
