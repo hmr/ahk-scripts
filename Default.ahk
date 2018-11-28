@@ -25,7 +25,7 @@ Return
 	if WinExist("ahk_exe Code - Insiders.exe")
 		WinActivate
 	Else
-		Run, "C:\Program Files\Microsoft VS Code Insiders\Code - Insiders.exe", "C:\Program Files\Microsoft VS Code Insiders"
+		Run, "C:\Users\dg\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe", "C:\Users\dg\AppData\Local\Programs\Microsoft VS Code Insiders"
 Return
 
 ; Win-E: Q-Dir instead of Explorer
@@ -100,16 +100,16 @@ Return
 
 ; Settings for Spotify(and other media players)
 ; "ALT + LEFT" for previous 
-!Left::Media_Prev
++!Left::Media_Prev
 Return
 ; "ALT + RIGHT" for next 
-!Right::Media_Next
++!Right::Media_Next
 Return
 ; "ALT + UP" for pause
-!Up::Media_Play_Pause
++!Up::Media_Play_Pause
 Return
 ; "ALT + Down" for pause
-!Down::Media_Play_Pause
++!Down::Media_Play_Pause
 Return
 ; Win-Alt-Up -> Volume Up
 #!Up::Volume_Up
