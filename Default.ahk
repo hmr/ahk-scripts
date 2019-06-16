@@ -1,4 +1,4 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -8,16 +8,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	if WinExist("ahk_exe A5M2.exe")
 		WinActivate
 	Else
-		Run, "C:\Program Files\a5m2\A5M2.exe", "C:\Program Files\a5m2"
+		Run, %ProgramFiles%\a5m2\A5M2.exe, %ProgramFiles%\a5m2
 Return
-
 
 ; Win-N: Notepad++
 #n::
 	if WinExist("ahk_class Notepad++")
 		WinActivate
 	Else
-		Run, "C:\Program Files (x86)\Notepad++\notepad++.exe", "C:\Program Files (x86)\Notepad++"
+		Run, %ProgramFiles%\Notepad++\notepad++.exe, %ProgramFiles%\Notepad++
 Return
 
 ; Win-V: VSC(Insiders)
@@ -25,7 +24,7 @@ Return
 	if WinExist("ahk_exe Code - Insiders.exe")
 		WinActivate
 	Else
-		Run, "C:\Users\dg\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe", "C:\Users\dg\AppData\Local\Programs\Microsoft VS Code Insiders"
+		Run, %LOCALAPPDATA%\Programs\Microsoft VS Code Insiders\Code - Insiders.exe, %LOCALAPPDATA%\Programs\Microsoft VS Code Insiders
 Return
 
 ; Win-E: Q-Dir instead of Explorer
@@ -33,7 +32,7 @@ Return
 	if WinExist("ahk_exe Q-Dir.exe")
 		WinActivate
 	Else
-		Run, "C:\Program Files\Q-Dir\Q-Dir.exe"
+		Run, %ProgramFiles%\Q-Dir\Q-Dir.exe
 Return
 
 ; Win-C: Cygwin Mintty
@@ -57,7 +56,7 @@ Return
 	if WinExist("ahk_class MozillaWindowClass")
 		WinActivate
 	Else
-		Run, "C:\Program Files\Mozilla Firefox\firefox.exe", "C:\Program Files\Mozilla Firefox"
+		Run, "%ProgramFiles%\Mozilla Firefox\firefox.exe", "%ProgramFiles%\Mozilla Firefox"
 Return
 
 ; Ctl-Win-C: 電卓
@@ -78,7 +77,7 @@ Return
 
 ; Win-R: RTM
 #r::
-    Run C:\Users\dg\AppData\Local\rememberthemilk\Remember The Milk.exe, C:\Users\dg\AppData\Local\rememberthemilk\app-1.1.9
+    Run %LOCALAPPDATA%\rememberthemilk\Remember The Milk.exe, %LOCALAPPDATA%\rememberthemilk
 Return
 
 ; Win-W: WhatsApp
@@ -86,12 +85,12 @@ Return
     if WinExist("WhatsApp")
         WinActivate
     Else
-        Run C:\Users\dg\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\WhatsApp\WhatsApp.lnk
+        Run %APPDATA%\Microsoft\Windows\Start Menu\Programs\WhatsApp\WhatsApp.lnk
 Return
 
 ; Ctrl-Win-S: Spotify
 ^#s::
-    Run C:\Apps\Spotify.lnk
+    Run %APPDATA%\Spotify\Spotify.exe, %APPDATA%\Spotify
 Return
 
 ; Don't switch langueages.
