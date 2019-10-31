@@ -1,5 +1,5 @@
 ﻿; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
+#Warn   ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
@@ -11,12 +11,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		Run, %ProgramFiles%\a5m2\A5M2.exe, %ProgramFiles%\a5m2
 Return
 
-; Win-N: Notepad++
+; Win-N: Notepad++ -> Testing Mery now
 #n::
-	if WinExist("ahk_class Notepad++")
+	if WinExist("ahk_exe Mery.exe")
 		WinActivate
 	Else
 		Run, %ProgramFiles%\Notepad++\notepad++.exe, %ProgramFiles%\Notepad++
+		Run, C:\Program Files\Mery\Mery.exe /mf "C:\Program Files\Mery\Macros\Resume.js", "C:\Program Files\Mery"
+		
 Return
 
 ; Win-V: VSC(Insiders)
