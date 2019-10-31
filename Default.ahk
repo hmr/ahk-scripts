@@ -17,7 +17,7 @@ Return
 		WinActivate
 	Else
 		Run, %ProgramFiles%\Notepad++\notepad++.exe, %ProgramFiles%\Notepad++
-		Run, C:\Program Files\Mery\Mery.exe /mf "C:\Program Files\Mery\Macros\Resume.js", "C:\Program Files\Mery"
+		;Run, C:\Program Files\Mery\Mery.exe /mf "C:\Program Files\Mery\Macros\Resume.js", "C:\Program Files\Mery"
 		
 Return
 
